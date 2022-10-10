@@ -57,20 +57,20 @@
           <h2>Vui lòng chọn loại xe:</h2>
           <ul>
             <li class="type">
-              <input id="uberX" type="radio" name="selector" />
+              <input id="uberX" type="radio" name="selector" onclick="LayLoaiXe()"/>
               <label for="uberX">Uber X</label>
 
               <div class="check"></div>
             </li>
 
             <li class="type">
-              <input id="uberSUV" type="radio" name="selector" />
+              <input id="uberSUV" type="radio" name="selector" onclick="LayLoaiXe()"/>
               <label for="uberSUV">Uber SUV</label>
               <div class="check"></div>
             </li>
 
             <li class="type">
-              <input id="uberBlack" type="radio" name="selector" />
+              <input id="uberBlack" type="radio" name="selector" onclick="LayLoaiXe()"/>
               <label for="uberBlack">Uber Black</label>
               <div class="check"></div>
             </li>
@@ -110,7 +110,7 @@
 
           <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
-            <button id="btn-tinh-tien" type="button" class="contact100-form-btn">TÍNH TIỀN</button>
+            <button id="btn-tinh-tien" type="button" class="contact100-form-btn" onclick="TinhTien()">TÍNH TIỀN</button>
           </div>
           <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
@@ -129,7 +129,7 @@
         <div id="divThanhTien" class="dongia">
           <h2>
             Thành tiền:
-            <span id="xuatTien" class="xuatTien"> 12345</span>
+            <span id="xuatTien" class="xuatTien"></span>
             vnd
           </h2>
         </div>
@@ -144,7 +144,8 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-    <script src="js/map-custom.js"></script>
+    <script src="js/map-custom.js"></script>`
+    <script type="text/javascript" src="./index.js"></script>
     <!--===============================================================================================-->
   </body>
 </html>
