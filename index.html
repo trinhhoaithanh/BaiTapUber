@@ -115,6 +115,7 @@
           <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
             <button
+              onclick="XuatHoaDon()"
               type="button"
               class="contact100-form-btn"
               data-toggle="modal"
@@ -132,6 +133,80 @@
             <span id="xuatTien" class="xuatTien"></span>
             vnd
           </h2>
+        </div>
+      </div>
+      <div id="hoa-don"class="modal" tabindex="-1" role="dialog"  >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Hóa đơn</h5>
+              <button onclick="TatHoaDon()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-3">
+                  <h6>Chi tiết</h6>
+                </div>
+                <div class="col-3">
+                  <h6>Sử dụng</h6>
+                </div>
+                <div class="col-3">
+                  <h6>Đơn giá</h6>
+                </div>
+                <div class="col-3">
+                  <h6>Thành tiền</h6>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div id="ten-uber"class="col-3">
+                  
+                </div>
+                <div id="su-dung" class="col-3">
+                  
+                </div>
+                <div id="don-gia" class="col-3">
+                  
+                </div>
+                <div id="thanh-tien" class="col-3">
+                  
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div id="thoi-gian-cho"class="col-3">
+                  <h6>Thời gian chờ</h6>
+                </div>
+                <div id="su-dung" class="col-3">
+                  
+                </div>
+                <div id="don-gia" class="col-3">
+                  
+                </div>
+                <div id="thanh-tien" class="col-3">
+                  
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-3">
+                  <h6>Total</h6>
+                </div>
+                <div class="col-6">
+
+                </div>
+                <div id="tong-tien" class="col-3">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              
+              <button onclick="TatHoaDon()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
