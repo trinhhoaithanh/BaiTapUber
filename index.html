@@ -145,65 +145,19 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="row">
-                <div class="col-3">
-                  <h6>Chi tiết</h6>
-                </div>
-                <div class="col-3">
-                  <h6>Sử dụng</h6>
-                </div>
-                <div class="col-3">
-                  <h6>Đơn giá</h6>
-                </div>
-                <div class="col-3">
-                  <h6>Thành tiền</h6>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div id="ten-uber"class="col-3">
-                  
-                </div>
-                <div id="su-dung" class="col-3">
-                  
-                </div>
-                <div id="don-gia" class="col-3">
-                  
-                </div>
-                <div id="thanh-tien" class="col-3">
-                  
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div id="thoi-gian-cho"class="col-3">
-                  <h6>Thời gian chờ</h6>
-                </div>
-                <div id="su-dung" class="col-3">
-                  
-                </div>
-                <div id="don-gia" class="col-3">
-                  
-                </div>
-                <div id="thanh-tien" class="col-3">
-                  
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-3">
-                  <h6>Total</h6>
-                </div>
-                <div class="col-6">
-
-                </div>
-                <div id="tong-tien" class="col-3">
-                  
-                </div>
-              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Chi tiết</th>
+                    <th>Sử dụng</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                  </tr>
+                </thead>
+                <tbody id="render-tbody"></tbody>
+              </table>
             </div>
             <div class="modal-footer">
-              
               <button onclick="TatHoaDon()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

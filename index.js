@@ -88,36 +88,290 @@ function TinhTien(){
    
      spanTien.innerHTML = thanhTien;
 }
-function XuatUberX(){
-    var tenUber = document.getElementById('ten-uber');
-    tenUber.innerHTML = 'UberX';
+function renderHoaDon(){
+    var contentHTML ="";
     var laySoKM  = document.getElementById('soKM').value;
     laySoKM = parseFloat(laySoKM);
-    var suDung = document.getElementById('su-dung');
-    if (laySoKM<=1){
-        suDung.innerHTML = laySoKM+' km';
-    } 
-    if(laySoKM>1&&laySoKM<=20){
-        suDung.innerHTML = 1+' km';
-        suDung.innerHTML = (laySoKM-1) +' km';
-    }
-}
-function XuatTotal(){
-    var tongTien = TinhTien();
-    var total = document.getElementById('tong-tien');
-    total.innerHTML = tongTien;
-}
-function XuatHoaDon(){
-    var hoaDon = document.getElementById('hoa-don');
-    hoaDon.style.display = 'block';
+    var layThoiGianCho  = document.getElementById('thoiGianCho').value;
+    layThoiGianCho = parseFloat(layThoiGianCho);
     var loaiXe = LayLoaiXe();
     switch(loaiXe)
     {
         case 'uberX':
-            XuatUberX();
+            if (laySoKM<=1){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM} km</td>
+                          <td>${KM1_UBERX}</td>
+                          <td>${KM1_UBERX}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBERX}</td>
+                          <td>${TGCHO_UBERX * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            else if (laySoKM>1&&laySoKM<=20){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>1 km</td>
+                          <td>${KM1_UBERX}</td>
+                          <td>${KM1_UBERX}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM-1} km</td>
+                          <td>${KMDUOI20_UBERX}</td>
+                          <td>${KMDUOI20_UBERX*(laySoKM-1)}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBERX}</td>
+                          <td>${TGCHO_UBERX * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            else if(laySoKM>20){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>1 km</td>
+                          <td>${KM1_UBERX}</td>
+                          <td>${KM1_UBERX}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>19 km</td>
+                          <td>${KMDUOI20_UBERX}</td>
+                          <td>${KMDUOI20_UBERX*19}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM-20}</td>
+                          <td>${KMTREN20_UBERX}</td>
+                          <td>${KMTREN20_UBERX*(laySoKM-20)}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBERX}</td>
+                          <td>${TGCHO_UBERX * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            break;
+        case 'uberSUV':
+            if (laySoKM<=1){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM} km</td>
+                          <td>${KM1_UBER_SUV}</td>
+                          <td>${KM1_UBER_SUV}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBER_SUV}</td>
+                          <td>${TGCHO_UBER_SUV * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            else if (laySoKM>1&&laySoKM<=20){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>1 km</td>
+                          <td>${KM1_UBER_SUV}</td>
+                          <td>${KM1_UBER_SUV}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM-1} km</td>
+                          <td>${KMDUOI20_UBER_SUV}</td>
+                          <td>${KMDUOI20_UBER_SUV*(laySoKM-1)}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBER_SUV}</td>
+                          <td>${TGCHO_UBER_SUV * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            else if(laySoKM>20){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>1 km</td>
+                          <td>${KM1_UBER_SUV}</td>
+                          <td>${KM1_UBER_SUV}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>19 km</td>
+                          <td>${KMDUOI20_UBER_SUV}</td>
+                          <td>${KMDUOI20_UBER_SUV*19}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM-20}</td>
+                          <td>${KMTREN20_UBER_SUV}</td>
+                          <td>${KMTREN20_UBER_SUV*(laySoKM-20)}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBER_SUV}</td>
+                          <td>${TGCHO_UBER_SUV * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            break;
+        case 'uberBlack':
+            if (laySoKM<=1){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM} km</td>
+                          <td>${KM1_UBER_BLACK}</td>
+                          <td>${KM1_UBER_BLACK}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBER_BLACK}</td>
+                          <td>${TGCHO_UBER_BLACK * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            else if (laySoKM>1&&laySoKM<=20){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>1 km</td>
+                          <td>${KM1_UBER_BLACK}</td>
+                          <td>${KM1_UBER_BLACK}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM-1} km</td>
+                          <td>${KMDUOI20_UBER_BLACK}</td>
+                          <td>${KMDUOI20_UBER_BLACK*(laySoKM-1)}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBER_BLACK}</td>
+                          <td>${TGCHO_UBER_BLACK * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
+            else if(laySoKM>20){
+                contentHTML+= `
+                <tr>
+                          <td>${loaiXe}</td>
+                          <td>1 km</td>
+                          <td>${KM1_UBER_BLACK}</td>
+                          <td>${KM1_UBER_BLACK}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>19 km</td>
+                          <td>${KMDUOI20_UBER_BLACK}</td>
+                          <td>${KMDUOI20_UBER_BLACK*19}</td>
+                        </tr>
+                        <tr>
+                          <td>${loaiXe}</td>
+                          <td>${laySoKM-20}</td>
+                          <td>${KMTREN20_UBER_BLACK}</td>
+                          <td>${KMTREN20_UBER_BLACK*(laySoKM-20)}</td>
+                        </tr>
+                        <tr>
+                          <td>Thời gian chờ</td>
+                          <td>${layThoiGianCho}</td>
+                          <td>${TGCHO_UBER_BLACK}</td>
+                          <td>${TGCHO_UBER_BLACK * layThoiGianCho}</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>Total</td>
+                          <td></td>
+                          <td></td>
+                          <td>${TinhTien()}</td>
+                        </tr>
+                
+                `;
+            }
             break;
     }
-    XuatTotal();
+    console.log(contentHTML);
+    document.getElementById('render-tbody').innerHTML = contentHTML;
+}
+function XuatHoaDon(){
+    var bill = document.getElementById('hoa-don');
+    bill.style.display = 'block';
+    bill.innerHTML = renderHoaDon();
 }
 function TatHoaDon(){
     var hoaDon = document.getElementById('hoa-don');
