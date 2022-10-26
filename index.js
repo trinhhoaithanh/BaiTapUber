@@ -87,6 +87,7 @@ function TinhTien(){
     }
    
      spanTien.innerHTML = thanhTien;
+     return thanhTien;
 }
 function renderHoaDon(){
     var contentHTML ="";
@@ -95,6 +96,8 @@ function renderHoaDon(){
     var layThoiGianCho  = document.getElementById('thoiGianCho').value;
     layThoiGianCho = parseFloat(layThoiGianCho);
     var loaiXe = LayLoaiXe();
+    var thanhTien=0;
+    thanhTien=TinhTien();
     switch(loaiXe)
     {
         case 'uberX':
@@ -367,12 +370,9 @@ function renderHoaDon(){
     }
     console.log(contentHTML);
     document.getElementById('render-tbody').innerHTML = contentHTML;
+    document.getElementById('hoa-don').style.display = 'block';
 }
-function XuatHoaDon(){
-    var bill = document.getElementById('hoa-don');
-    bill.style.display = 'block';
-    bill.innerHTML = renderHoaDon();
-}
+
 function TatHoaDon(){
     var hoaDon = document.getElementById('hoa-don');
     hoaDon.style.display = 'none';
